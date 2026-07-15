@@ -1,4 +1,4 @@
-# SkillNova AI
+# SkillForge
 
 Premium MERN learning platform for AI-assisted, interactive technical education.
 
