@@ -1,0 +1,17 @@
+{
+  "name": "skillforge",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "lms-backend"
+  ],
+  "scripts": {
+    "dev": "docker compose up --build",
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "npm --prefix lms-backend run dev",
+    "build": "npm --prefix frontend run build",
+    "seed": "npm --prefix lms-backend run seed",
+    "test": "npm --prefix lms-backend test && npm --prefix frontend test"
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">SkillForge</title>
+  <defs>
+    <linearGradient id="sfGrad" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4f46e5"/>
+      <stop offset="0.45" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#sfGrad)"/>
+  <path fill="#fff" fill-opacity="0.96" d="M18 44h28v3H18v-3zm2-6h24l-1-4H21l-1 4zm4-14h16l2 6H22l2-6z"/>
+  <path fill="#fff" fill-opacity="0.9" d="M38 14l6 8-4 1-5-7 3-2z"/>
+  <circle cx="44" cy="13" r="3" fill="#fbbf24"/>
+</svg>

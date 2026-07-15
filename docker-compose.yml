@@ -1,0 +1,40 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+  backend:
+    build:
+      context: ./lms-backend
+    restart: unless-stopped
+    env_file:
+      - ./lms-backend/.env.example
+    environment:
+      MONGO_URI: mongodb://mongo:27017/skillnova
+      REDIS_URL: redis://redis:6379
+      CLIENT_URL: http://localhost:5173
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+      - redis
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:5000/api
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+volumes:
+  mongo-data:
